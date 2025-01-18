@@ -20,3 +20,18 @@ Route::get('/', function () {
 Route::get('/pruebas', function () {
     return view('pruebas');
 });
+
+Route::get('/navbar', function () {
+    return view('navbar');
+});
+
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
