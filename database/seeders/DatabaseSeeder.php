@@ -26,7 +26,6 @@ class DatabaseSeeder extends Seeder
 			"name" => "Hakys",
 			"email" => "hakyss@gmail.com",
 			"password" => bcrypt("password"),
-            "balance" => 5000,
 		]);
         $t = Team::create([
             "user_id" => $u->id,
